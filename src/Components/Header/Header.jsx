@@ -31,7 +31,7 @@ const Header = () => {
             </NavLink>
           </li>
           <li>
-            <NavLink to="/b" className="rounded-none">
+            <NavLink to="/my-orders" className="rounded-none">
               My Orders
             </NavLink>
           </li>

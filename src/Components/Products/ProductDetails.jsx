@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router";
 import axios from "axios";
+import OrderFormModal from "./MyProducts/OrderFormModal";
 
 const ProductDetails = () => {
   const { id } = useParams();
@@ -48,7 +49,8 @@ const ProductDetails = () => {
             </Link>
           </p>
           <p className="text-gray-700 text-sm">Location: {product.location}</p>
-          <Link className="btn bg-linear-to-tr from-[#ff6f00] to-[#ffb03a] text-white mt-5">{product.category === "Pet" ? "Adopt Now" : "Order Now"}</Link>
+
+          <OrderFormModal product={product} className="btn "></OrderFormModal>
         </div>
       </div>
     </div>
