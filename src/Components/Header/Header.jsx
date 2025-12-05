@@ -9,21 +9,31 @@ const Header = () => {
   const li = (
     <>
       <li>
-        <NavLink to="/">Home</NavLink>
+        <NavLink to="/" className="rounded-none">
+          Home
+        </NavLink>
       </li>
       <li>
-        <NavLink to="/products">Pets & Supplies</NavLink>
+        <NavLink to="/products" className="rounded-none">
+          Pets & Supplies
+        </NavLink>
       </li>
       {user && (
         <>
           <li>
-            <NavLink to="/add-product-form">Add Listing</NavLink>
+            <NavLink to="/add-product-form" className="rounded-none">
+              Add Listing
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/a">My Listings</NavLink>
+            <NavLink to="/my-products" className="rounded-none">
+              My Products
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/b">My Orders</NavLink>
+            <NavLink to="/b" className="rounded-none">
+              My Orders
+            </NavLink>
           </li>
         </>
       )}
@@ -66,7 +76,7 @@ const Header = () => {
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1 font-medium">{li}</ul>
+        <ul className="menu menu-horizontal px-1 font-medium menu-nav">{li}</ul>
       </div>
 
       <div className="navbar-end flex gap-1.5">

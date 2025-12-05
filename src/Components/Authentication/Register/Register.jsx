@@ -63,7 +63,7 @@ const Register = () => {
 
   return (
     <div className="lg:h-[92vh] h-auto bg-[#1c1003] flex items-center bg-cover bg-center px-4 md:px-0">
-      <title>GreenNest - Register</title>
+      <title>PawMart - Register</title>
       <div className="w-full h-full overflow-hidden ">
         <img src="/cat-cover.jpg" alt="" className="w-full object-cover" />
       </div>

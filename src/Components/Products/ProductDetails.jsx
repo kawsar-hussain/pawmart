@@ -8,6 +8,12 @@ const ProductDetails = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    if (product) {
+      document.title = `PawMart - ${product.name}`;
+    }
+  }, [product]);
+
+  useEffect(() => {
     axios
       .get(`http://localhost:3000/product-details/${id}`)
       .then((res) => {

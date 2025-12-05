@@ -7,7 +7,7 @@ import ExtraSections from "./ExtraSections";
 const Home = () => {
   return (
     <div>
-      <title>GreenNest - Home</title>
+      <title>PawMart - Home</title>
       <Hero></Hero>
       <ProductCategories></ProductCategories>
       <hr className="mx-20 text-gray-300" />

@@ -16,6 +16,7 @@ import PrivateRoute from "./Provider/PrivateRoute";
 import Products from "./Components/Products/Products";
 import ProductDetails from "./Components/Products/ProductDetails";
 import FilteredCategory from "./Components/Home/ProductCategory/FilteredCategory";
+import MyProducts from "./Components/Products/MyProducts/MyProducts";
 
 // promise for plants section
 
@@ -50,6 +51,14 @@ const router = createBrowserRouter([
         element: (
           <PrivateRoute>
             <ProductDetails></ProductDetails>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "my-products",
+        element: (
+          <PrivateRoute>
+            <MyProducts></MyProducts>
           </PrivateRoute>
         ),
       },

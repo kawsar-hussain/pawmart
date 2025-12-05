@@ -38,7 +38,7 @@ const Profile = () => {
 
   return (
     <div className="bg-[#49e94926] lg:h-[90vh] h-auto flex justify-center items-center px-8 py-15 lg:py-0 md:px-0">
-      <title>GreenNest - Profile</title>
+      <title>PawMart - Profile</title>
       <div className="rounded-xl shadow-md p-5 md:p-6 text-center md:max-w-md ">
         {editing ? (
           <div className=" flex flex-col w-[250px] md:w-[300px]">
