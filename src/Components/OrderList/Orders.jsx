@@ -22,9 +22,9 @@ const Orders = () => {
 
     // header
     doc.setTextColor("#ff9900");
-    doc.setFontSize(24);
+    doc.setFontSize(20);
     doc.setFont(undefined, "bold"); // Set bold
-    doc.text("My Order Lists", doc.internal.pageSize.getWidth() / 2, 15, { align: "center" }); // Centered
+    doc.text("My Order Lists (PawMart)", doc.internal.pageSize.getWidth() / 2, 15, { align: "center" }); // Centered
 
     // Table headers
     const headers = [["SL No", "Product", "Buyer Name", "Quantity", "Price", "Address", "Phone", "Date"]];
@@ -69,7 +69,7 @@ const Orders = () => {
       <h2 className="text-2xl lg:text-4xl font-bold primary-text mb-5 lg:mb-10 text-center">My Order Lists</h2>
 
       <div className="mb-4 text-center flex justify-end">
-        <button onClick={downloadPdf} className="btn btn-sm bg-linear-to-tr from-[#ff6f00] to-[#ffb03a] text-white rounded hover:scale-105 duration-200">
+        <button onClick={downloadPdf} className="btn h-9 bg-linear-to-tr from-[#ff6f00] to-[#ffb03a] text-white rounded hover:scale-105 duration-200">
           Download PDF
         </button>
       </div>

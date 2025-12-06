@@ -23,7 +23,7 @@ const AddProductForm = () => {
 
     productData.category === "Pets" ? toast.success("Pet Added Successfully!") : toast.success("Product Added Successfully!");
 
-    // form.reset();
+    form.reset();
     console.log(productData);
     axios.post("https://server-a10-six.vercel.app/add-product-form", productData).then((res) => {
       console.log(res);

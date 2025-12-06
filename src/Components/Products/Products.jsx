@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router";
 import { FaFilter } from "react-icons/fa";
+import Loader from "../../Loader";
 
 const Products = () => {
   const [products, setProducts] = useState([]);
@@ -39,7 +40,7 @@ const Products = () => {
               <path d="m21 21-4.3-4.3"></path>
             </g>
           </svg>
-          <input type="search" placeholder="Search Product" value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} className="placeholder-gray-500" />
+          <input type="search" placeholder="Search" value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} className="placeholder-gray-500" />
         </label>
 
         <div className="flex gap-2 text-gray-700 mb-7">
@@ -59,7 +60,7 @@ const Products = () => {
         <p className="mt-10 text-gray-600 text-center">No Product Founded</p>
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredProducts.map((item) => (
+          {[...filteredProducts].reverse().map((item) => (
             <div key={item._id} className="bg-base-200 rounded-md overflow-hidden hover:scale-[1.01] duration-75 shadow-md">
               <div className="w-full aspect-4/3">
                 <img src={item.image} alt={item.name} className="w-full h-full object-cover" />

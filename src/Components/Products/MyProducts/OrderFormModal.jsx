@@ -35,7 +35,7 @@ const OrderFormModal = ({ product }) => {
       .catch((err) => {
         console.log(err);
       });
-    navigate("/my-orders");
+    navigate("/products");
     toast.success("Order Placed Successfully!");
   };
 

@@ -11,7 +11,7 @@ const ProductCategories = () => {
     },
     {
       image: "https://www.petfoodinstitute.org/wp-content/uploads/2020/12/pet-food-types.jpg",
-      category: "Pet Food",
+      category: "Pet Foods",
       categoryRoute: "Food",
     },
     {
