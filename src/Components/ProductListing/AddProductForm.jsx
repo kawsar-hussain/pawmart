@@ -55,7 +55,7 @@ const AddProductForm = () => {
               <option>Pets</option>
               <option>Food</option>
               <option>Accessories</option>
-              <option>Care Products</option>
+              <option>Care-Products</option>
             </select>
           </div>
 
