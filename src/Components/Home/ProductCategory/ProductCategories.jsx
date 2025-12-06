@@ -33,6 +33,7 @@ const ProductCategories = () => {
           Explore <span className="secondary-text">Our Products</span>
         </h2>
       </div>
+
       <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-4">
         {category.map((item, index) => (
           <Link to={`filtered-category/${item.categoryRoute}`} key={index} className="bg-base-200 rounded-md overflow-hidden border-2 border-[#ff9900] hover:scale-[1.01] duration-75">

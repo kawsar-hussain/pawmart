@@ -67,7 +67,7 @@ const OrderFormModal = ({ product }) => {
                     <div className="text-sm opacity-50">{product?.category}</div>
                     <div className="text-xs opacity-50">{`ID: ${product?._id}`}</div>
                   </div>
-                  <p className="primary-text text-md lg:text-xl font-bold">{`Price: $${product.price}`}</p>
+                  <p className="primary-text text-md lg:text-xl font-bold">{product.price === 0 ? "Free For Adopt" : `Price: $${product.price}`}</p>
                 </div>
               </div>
               <form onSubmit={handleOrder} className="space-y-4">

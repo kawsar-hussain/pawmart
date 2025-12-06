@@ -20,7 +20,12 @@ const FilteredCategory = () => {
       });
   }, [category]);
 
-  return <div></div>;
+  console.log(selectedCategory);
+  return (
+    <div>
+      <h1>hello</h1>
+    </div>
+  );
 };
 
 export default FilteredCategory;
