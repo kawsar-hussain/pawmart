@@ -27,7 +27,7 @@ const UpdateMyProduct = () => {
       .catch((err) => {
         console.error(err);
       });
-  }, [id, navigate]);
+  }, [id]);
 
   const handleUpdate = (e) => {
     e.preventDefault();

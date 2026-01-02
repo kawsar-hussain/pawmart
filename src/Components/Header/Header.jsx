@@ -3,41 +3,25 @@ import { Link, Links, NavLink, useNavigate } from "react-router";
 import { AuthContext } from "../../Provider/AuthProvider";
 import { toast } from "react-toastify";
 import ThemController from "./ThemController";
+import { FiLogOut, FiUserCheck } from "react-icons/fi";
+import { IoIosAddCircleOutline, IoIosGitPullRequest } from "react-icons/io";
+import { MdAddChart } from "react-icons/md";
+import { IoBrushOutline } from "react-icons/io5";
 
 const Header = () => {
   const { user, logOut } = use(AuthContext);
 
   const li = (
     <>
-      <li>
-        <NavLink to="/" className="rounded-none">
-          Home
-        </NavLink>
+      <li className="">
+        <NavLink to="/">Home</NavLink>
       </li>
       <li>
-        <NavLink to="/products" className="rounded-none">
-          Pets & Products
-        </NavLink>
+        <NavLink to="/pets">Pets</NavLink>
       </li>
-      {user && (
-        <>
-          <li>
-            <NavLink to="/add-product-form" className="rounded-none">
-              Add Products
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/my-products" className="rounded-none">
-              My Products
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/my-orders" className="rounded-none">
-              My Orders
-            </NavLink>
-          </li>
-        </>
-      )}
+      <li>
+        <NavLink to="/products">Products</NavLink>
+      </li>
     </>
   );
 
@@ -66,11 +50,6 @@ const Header = () => {
           </div>
           <ul tabIndex="-1" className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
             {li}
-            <li>
-              <div className="block mt-3">
-                <ThemController></ThemController>
-              </div>
-            </li>
           </ul>
         </div>
         <Link to="/" className="lg:text-2xl text-xl font-bold flex items-center gap-1">
@@ -82,22 +61,68 @@ const Header = () => {
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1 font-medium menu-nav">{li}</ul>
+        <ul id="nav" className="menu menu-horizontal px-1 font-medium menu-nav my-nav">
+          {li}
+        </ul>
       </div>
 
       <div className="navbar-end flex gap-1.5">
-        <div className="hidden lg:block">
-          <ThemController></ThemController>
-        </div>
         {user ? (
           <div className="flex items-center gap-2">
-            <div tabIndex={0} role="button" className="">
-              <img src={`${user.photoURL}`} alt="user photo" className="w-10 h-10 object-cover rounded-full"></img>
+            <div className="dropdown dropdown-end ">
+              <div tabIndex={0} role="button" className="cursor-pointer">
+                <img src={`${user.photoURL}`} alt="user photo" className="w-10 h-10 object-cover rounded-full"></img>
+              </div>
+              <ul tabIndex="-1" className="dropdown-content menu min-w-58 bg-base-100 rounded-box z-1 p-2 shadow-sm font-semibold">
+                <li className="mb-1">
+                  <div className="flex">
+                    <div className="">
+                      <img src={`${user.photoURL}`} alt="user photo" className="w-9 h-9 object-cover rounded-full"></img>
+                    </div>
+                    <div className="">
+                      <p className="text-xs">{user.displayName}</p>
+                      <p className="text-gray-600 text-[11px]">User</p>
+                    </div>
+                  </div>
+                </li>
+                <hr className="bg-gray-200 h-[1.5px] border-none" />
+                <ul className="py-1">
+                  <li>
+                    <Link to="/add-product-form" className="text-xs py-1.5 flex gap-2">
+                      <MdAddChart className="text-base" /> Add Items
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/my-products" className="text-xs py-1.5 flex gap-2">
+                      <FiUserCheck className="text-base" /> My Items
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/my-orders" className="text-xs py-1.5 flex gap-2">
+                      <IoIosGitPullRequest className="text-base" /> My Orders
+                    </Link>
+                  </li>
+                  <li>
+                    <div className="flex justify-between items-center py-1">
+                      <div className="flex gap-2 text-xs">
+                        <IoBrushOutline className="text-base" />
+                        Theme
+                      </div>
+                      <div className="">
+                        <ThemController></ThemController>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+                <hr className="bg-gray-200 h-px border-none mb-1" />
+                <li>
+                  <button onClick={handleLogOut} className="text-xs">
+                    <FiLogOut className="text-base" />
+                    Logout
+                  </button>
+                </li>
+              </ul>
             </div>
-
-            <button onClick={handleLogOut} className=" z-1 p-3 h-8 btn rounded-sm bg-linear-to-tr from-[#ff6f00] to-[#ffb03a] text-white hover:shadow-none">
-              Logout
-            </button>
           </div>
         ) : (
           <div className="flex gap-2">

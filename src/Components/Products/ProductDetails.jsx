@@ -10,6 +10,8 @@ const ProductDetails = () => {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
 
+  console.log(id);
+
   useEffect(() => {
     if (product) {
       document.title = `PawMart - ${product.name}`;
@@ -53,7 +55,7 @@ const ProductDetails = () => {
             <GrLocation className="text-xl" /> {product.location}
           </p>
 
-          <OrderFormModal product={product} className="btn "></OrderFormModal>
+          <OrderFormModal product={product} className="btn"></OrderFormModal>
         </div>
       </div>
     </div>

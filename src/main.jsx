@@ -19,6 +19,7 @@ import FilteredCategory from "./Components/Home/ProductCategory/FilteredCategory
 import MyProducts from "./Components/Products/MyProducts/MyProducts";
 import UpdateMyProduct from "./Components/Products/MyProducts/UpdateMyProduct";
 import Orders from "./Components/OrderList/Orders";
+import Pets from "./Components/Pets/Pets";
 
 // promise for plants section
 
@@ -42,6 +43,10 @@ const router = createBrowserRouter([
             <AddProductForm></AddProductForm>
           </PrivateRoute>
         ),
+      },
+      {
+        path: "pets",
+        element: <Pets></Pets>,
       },
       {
         path: "products",

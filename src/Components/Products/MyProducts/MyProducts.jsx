@@ -92,8 +92,8 @@ const MyProducts = () => {
                     <button
                       className="btn bg-[#ff3700] text-white shadow-none btn-sm"
                       onClick={() => {
-                        setModalCallback(() => () => handleDelete(myProduct._id)); // store callback
-                        setIsModalOpen(true); // open modal
+                        setModalCallback(() => () => handleDelete(myProduct._id));
+                        setIsModalOpen(true);
                       }}
                     >
                       Delete

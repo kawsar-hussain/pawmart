@@ -23,27 +23,22 @@ const RecentProducts = () => {
           Recent <span className="secondary-text">Products</span>
         </h2>
       </div>
-      <div className="grid lg:grid-cols-3 grid-cols-1 gap-5">
+      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4 lg:gap-3">
         {[...products]
+          .filter((item) => item.category != "Pets")
           .reverse()
-          .slice(0, 6)
           .map((item) => (
-            <div key={item._id} className="bg-base-200 rounded-md overflow-hidden hover:scale-[1.01] duration-75 shadow-md">
-              <div className="w-full aspect-4/3">
-                <img src={item.image} alt={item.name} className="w-full h-full object-cover" />
-              </div>
+            <div key={item._id} className="bg-white rounded-md overflow-hidden hover:scale-[1.01] duration-75 shadow-md">
+              <Link to={`/product-details/${item?._id}`}>
+                <div className="w-full aspect-4/3 border-b-2 border-gray-100">
+                  <img src={item.image} alt={item.name} className="w-full h-full object-cover" />
+                </div>
+              </Link>
 
-              <div className="p-4">
-                <h3 className="text-xl font-semibold">{item.name}</h3>
-                <p className="text-gray-600 text-sm">{item.category}</p>
-                <p className=" font-semibold py-2 primary-text">Price: {item.price === 0 ? "Free for Adoption" : `$${item.price}`}</p>
-                <p className="text-gray-600 text-sm">
-                  Location: <br /> {item.location}
-                </p>
-                {/* button */}
-                <Link to={`/product-details/${item?._id}`} className="bg-linear-to-tr from-[#ff6f00] to-[#ffb03a] btn w-full text-white py-1.5 font-bold text-md text-center mt-4">
-                  See Details
-                </Link>
+              <div className="p-3">
+                <h3 className="text-lg font-semibold">{item.name}</h3>
+                <p className="text-gray-600 text-xs">{item.category}</p>
+                <p className="text-xl font-semibold py-2 primary-text">{item.price === 0 ? "Free for Adoption" : `$${item.price}`}</p>
               </div>
             </div>
           ))}

@@ -10,7 +10,7 @@ body {
   color: #df8600;
 }
 
-nav .active {
+/* nav .active {
   background: linear-gradient(to top, rgba(255, 192, 97, 0.49), #df860000);
   border-bottom: #ffb048 3px solid;
 }
@@ -20,4 +20,12 @@ nav .active {
     background: linear-gradient(to top, #df860034, #df860000);
     border-bottom: none;
   }
+} */
+
+#nav li a {
+  background-color: transparent;
+}
+
+#nav li a:hover {
+  color: #ff7b00;
 }
