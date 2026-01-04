@@ -5,11 +5,6 @@ import { Link } from "react-router";
 const ProductCategories = () => {
   const category = [
     {
-      image: "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8cGV0fGVufDB8fDB8fHwy",
-      category: "Pets (Adoption)",
-      categoryRoute: "Pets",
-    },
-    {
       image: "https://www.petfoodinstitute.org/wp-content/uploads/2020/12/pet-food-types.jpg",
       category: "Pet Foods",
       categoryRoute: "Food",
@@ -34,7 +29,7 @@ const ProductCategories = () => {
         </h2>
       </div>
 
-      <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-4">
+      <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4">
         {category.map((item, index) => (
           <Link to={`filtered-category/${item.categoryRoute}`} key={index} className="bg-base-200 rounded-md overflow-hidden border-2 border-[#ff9900] group">
             <div className="w-full aspect-4/3 overflow-hidden">

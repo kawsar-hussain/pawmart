@@ -8,7 +8,7 @@ const PetDetails = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3000/pets-details/${id}`)
+      .get(`https://server-a10-six.vercel.app/pets-details/${id}`)
       .then((res) => {
         setPet(res.data);
       })

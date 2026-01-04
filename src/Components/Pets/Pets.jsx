@@ -15,7 +15,7 @@ const Pets = () => {
   useEffect(() => {
     setLoading(true);
     axios
-      .get("http://localhost:3000/pets")
+      .get("https://server-a10-six.vercel.app/pets")
       .then((res) => {
         setItems(res.data);
         setLoading(false);

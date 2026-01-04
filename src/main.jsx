@@ -23,6 +23,7 @@ import Pets from "./Components/Pets/Pets";
 import Dashboard from "./Components/Dashboard/Dashboard";
 import AddPet from "./Components/Pets/AddPet";
 import PetDetails from "./Components/Pets/PetDetails";
+import ContactUs from "./Components/ContactUs/ContactUs";
 
 // promise for plants section
 
@@ -74,6 +75,10 @@ const router = createBrowserRouter([
             <ProductDetails></ProductDetails>
           </PrivateRoute>
         ),
+      },
+      {
+        path: "contact-us",
+        element: <ContactUs></ContactUs>,
       },
       {
         path: "my-products",

@@ -25,7 +25,7 @@ const AddPet = () => {
 
     // form.reset();
     console.log(formData);
-    axios.post("http://localhost:3000/pets", formData).then((res) => {
+    axios.post("https://server-a10-six.vercel.app/pets", formData).then((res) => {
       console.log(res);
     });
   };

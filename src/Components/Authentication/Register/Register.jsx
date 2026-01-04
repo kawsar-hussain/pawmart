@@ -41,7 +41,7 @@ const Register = () => {
           .then(() => {
             setUser(result.user);
             axios
-              .post("http://localhost:3000/users", formData)
+              .post("https://server-a10-six.vercel.app/users", formData)
               .then((res) => {
                 console.log(res.data);
               })

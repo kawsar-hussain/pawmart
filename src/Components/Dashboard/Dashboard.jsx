@@ -10,7 +10,7 @@ export default function Dashboard() {
   // fetch users
   useEffect(() => {
     axios
-      .get("http://localhost:3000/users")
+      .get("https://server-a10-six.vercel.app/users")
       .then((res) => setUser(res.data))
       .catch((err) => console.error("Error fetching data:", err));
   }, []);
@@ -18,7 +18,7 @@ export default function Dashboard() {
   // fetch order
   useEffect(() => {
     axios
-      .get("http://localhost:3000/orders")
+      .get("https://server-a10-six.vercel.app/orders")
       .then((res) => setProducts(res.data))
       .catch((err) => console.error("Error fetching orders:", err));
   }, []);
