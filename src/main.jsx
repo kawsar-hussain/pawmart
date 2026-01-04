@@ -22,6 +22,7 @@ import Orders from "./Components/OrderList/Orders";
 import Pets from "./Components/Pets/Pets";
 import Dashboard from "./Components/Dashboard/Dashboard";
 import AddPet from "./Components/Pets/AddPet";
+import PetDetails from "./Components/Pets/PetDetails";
 
 // promise for plants section
 
@@ -57,6 +58,10 @@ const router = createBrowserRouter([
       {
         path: "pets",
         element: <Pets></Pets>,
+      },
+      {
+        path: "pet-details/:id",
+        element: <PetDetails></PetDetails>,
       },
       {
         path: "products",
@@ -119,10 +124,7 @@ const router = createBrowserRouter([
       },
     ],
   },
-  {
-    path: "*",
-    element: <Error404></Error404>,
-  },
+
   {
     path: "dashboard",
     element: (
@@ -130,6 +132,10 @@ const router = createBrowserRouter([
         <Dashboard></Dashboard>
       </PrivateRoute>
     ),
+  },
+  {
+    path: "*",
+    element: <Error404></Error404>,
   },
 ]);
 

@@ -1,17 +1,18 @@
-import React, { use } from "react";
+import React, { use, useContext } from "react";
 import { Link, Links, NavLink, useNavigate } from "react-router";
 import { AuthContext } from "../../Provider/AuthProvider";
 import { toast } from "react-toastify";
 import ThemController from "./ThemController";
 import { FiLogOut, FiUserCheck } from "react-icons/fi";
 import { IoIosGitPullRequest } from "react-icons/io";
-import { MdAddChart } from "react-icons/md";
+import { MdAddChart, MdOutlineDashboardCustomize } from "react-icons/md";
 import { IoBrushOutline } from "react-icons/io5";
 import { TbBuildingWarehouse } from "react-icons/tb";
 import { RiHome4Line } from "react-icons/ri";
 
 const Navbar = () => {
   const { user, logOut } = use(AuthContext);
+  const { dbUser } = useContext(AuthContext);
 
   const li = (
     <>
@@ -73,22 +74,31 @@ const Navbar = () => {
           <div className="flex items-center gap-2">
             <div className="dropdown dropdown-end ">
               <div tabIndex={0} role="button" className="cursor-pointer">
-                <img src={`${user.photoURL}`} alt="user photo" className="w-10 h-10 object-cover rounded-full"></img>
+                <img src={`${dbUser.photoURL}`} alt="user photo" className="w-10 h-10 object-cover rounded-full"></img>
               </div>
               <ul tabIndex="-1" className="dropdown-content menu min-w-58 bg-base-100 rounded-box z-1 p-2 shadow-sm font-semibold">
                 <li className="mb-1">
                   <div className="flex">
                     <div className="">
-                      <img src={`${user.photoURL}`} alt="user photo" className="w-9 h-9 object-cover rounded-full"></img>
+                      <img src={`${dbUser.photoURL}`} alt="user photo" className="w-9 h-9 object-cover rounded-full"></img>
                     </div>
                     <div className="">
-                      <p className="text-xs">{user.displayName}</p>
-                      <p className="text-gray-600 text-[11px]">User</p>
+                      <p className="text-xs">{dbUser.name}</p>
+                      <p className="text-gray-600 text-[11px]">{dbUser.role}</p>
                     </div>
                   </div>
                 </li>
                 <hr className="bg-gray-200 h-[1.5px] border-none" />
                 <ul className="py-1">
+                  {dbUser.role === "admin" && (
+                    <li>
+                      <Link to="/dashboard" className="text-xs py-1.5 flex gap-2">
+                        {" "}
+                        <MdOutlineDashboardCustomize className="text-base" /> Admin Dashboard{" "}
+                      </Link>
+                    </li>
+                  )}
+
                   <li>
                     <Link to="/add-product-form" className="text-xs py-1.5 flex gap-2">
                       <MdAddChart className="text-base" /> Add Item

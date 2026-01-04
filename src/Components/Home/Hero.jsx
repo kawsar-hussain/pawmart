@@ -7,8 +7,8 @@ import "swiper/css/navigation";
 
 const Hero = () => {
   return (
-    <div className="">
-      <section className="w-full">
+    <div className="lg:px-20 lg:py-10 px-3 py-5">
+      <section className="">
         <Swiper modules={[Autoplay, Pagination, Navigation]} autoplay={{ delay: 3000, disableOnInteraction: false }} pagination={{ clickable: true }} navigation loop speed={800} className="mySwiper">
           <SwiperSlide>
             <div className="relative">
